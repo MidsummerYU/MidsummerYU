@@ -20,9 +20,9 @@ THEMES = {
 
 
 class Face:
-    def __init__(self, path, wght, key):
+    def __init__(self, path, axes, key):
         self.key = key
-        tt = instantiateVariableFont(TTFont(path), {"wght": wght})
+        tt = instantiateVariableFont(TTFont(path), axes)
         buf = BytesIO()
         tt.save(buf)
         self.tt = TTFont(BytesIO(buf.getvalue()))
@@ -74,12 +74,13 @@ class Face:
 
 GLYPHS = {}
 
-REG = Face(FONT_DIR / "EBGaramond.ttf", 400, "r")
-MED = Face(FONT_DIR / "EBGaramond.ttf", 500, "m")
-CAPS = Face(FONT_DIR / "EBGaramond.ttf", 600, "c")
-ITAL = Face(FONT_DIR / "EBGaramond-Italic.ttf", 400, "i")
+INTER = FONT_DIR / "Inter.ttf"
+REG = Face(INTER, {"wght": 400, "opsz": 14}, "r")
+MED = Face(INTER, {"wght": 600, "opsz": 20}, "m")
+CAPS = Face(INTER, {"wght": 600, "opsz": 14}, "c")
+DISPLAY = Face(INTER, {"wght": 650, "opsz": 32}, "d")
 
-CAPS_TRACK = 3.2
+CAPS_TRACK = 1.8
 
 
 def text(face, s, size, x, y, fill, tracking=0.0):
@@ -152,17 +153,17 @@ def banner(t):
     out.append("</g></g>")
     x0 = 76
     out.append(fade(0.1, 1.4, 10))
-    out.append(text(MED, "Yumeng Ye", 92, x0, 178, t["text"]))
+    out.append(text(DISPLAY, "Yumeng Ye", 80, x0 - 4, 176, t["text"], -2.0))
     out.append("</g>")
     out.append(f'<line x1="{x0 + 2}" y1="214" x2="{x0 + 74}" y2="214" stroke="{t["accent"]}" stroke-width="2" '
                f'stroke-dasharray="72" stroke-dashoffset="72"><animate attributeName="stroke-dashoffset" from="72" to="0" '
                f'begin="0.9s" dur="0.9s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" keyTimes="0;1"/></line>')
     out.append(fade(1.1, 1.2, 6))
-    out.append(text(CAPS, "AI ENGINEER", 17, x0 + 2, 256, t["text"], 4.2))
-    cw = CAPS.width("AI ENGINEER", 17, 4.2)
-    out.append(f'<circle cx="{x0 + 2 + cw + 17:.1f}" cy="250.5" r="2" fill="{t["accent"]}"/>')
-    out.append(text(CAPS, "PARIS", 17, x0 + 2 + cw + 34, 256, t["text"], 4.2))
-    out.append(text(ITAL, "LLMs, agents, retrieval, evaluation and fine-tuning", 23, x0 + 2, 294, t["muted"]))
+    out.append(text(CAPS, "AI ENGINEER", 15, x0 + 2, 255, t["text"], 2.6))
+    cw = CAPS.width("AI ENGINEER", 15, 2.6)
+    out.append(f'<circle cx="{x0 + 2 + cw + 15:.1f}" cy="249.5" r="2" fill="{t["accent"]}"/>')
+    out.append(text(CAPS, "PARIS", 15, x0 + 2 + cw + 30, 255, t["text"], 2.6))
+    out.append(text(REG, "LLMs, agents, retrieval, evaluation and fine-tuning", 20, x0 + 2, 292, t["muted"]))
     out.append("</g></svg>")
     return "".join(out)
 
@@ -177,12 +178,12 @@ def card_open_source(t):
     out = frame(w, h, t)
     out.append(fade(0.1, 1.0, 6))
     out.append(label("Open source", 76, 70, t["accent"]))
-    out.append(text(ITAL, "Tools I use, and help improve", 22, 76, 104, t["muted"]))
+    out.append(text(REG, "Tools I use, and help improve", 19, 76, 104, t["muted"]))
     for k, (repo, what, count) in enumerate(CONTRIBUTIONS):
         y = 158 + k * 54
         out.append(f'<line x1="76" y1="{y - 34}" x2="{w - 76}" y2="{y - 34}" stroke="{t["rule"]}"/>')
-        out.append(text(MED, repo, 25, 76, y, t["text"]))
-        out.append(text(REG, what, 20, 420, y, t["muted"]))
+        out.append(text(MED, repo, 21, 76, y, t["text"]))
+        out.append(text(REG, what, 17, 400, y, t["muted"]))
         cw = CAPS.width(count.upper(), 13, CAPS_TRACK)
         out.append(label(count, w - 76 - cw, y - 2, t["accent"]))
     out.append("</g></svg>")
@@ -190,22 +191,22 @@ def card_open_source(t):
 
 
 def card_small(t, kicker, title, body, tags, link):
-    w, h = 590, 430
+    w, h = 590, 390
     out = frame(w, h, t)
     out.append(fade(0.1, 1.0, 6))
     x, maxw = 44, w - 88
-    out.append(label(kicker, x, 66, t["accent"], 15))
-    y = 116
-    for line in MED.wrap(title, 36, maxw):
-        out.append(text(MED, line, 36, x, y, t["text"]))
-        y += 42
+    out.append(label(kicker, x, 66, t["accent"], 14))
+    y = 114
+    for line in MED.wrap(title, 30, maxw):
+        out.append(text(MED, line, 30, x, y, t["text"], -0.4))
+        y += 38
     y += 10
-    for line in REG.wrap(body, 23, maxw):
-        out.append(text(REG, line, 23, x, y, t["muted"]))
-        y += 32
-    out.append(text(CAPS, "  ·  ".join(tags).upper(), 13, x, h - 94, t["faint"], 2.2))
+    for line in REG.wrap(body, 20, maxw):
+        out.append(text(REG, line, 20, x, y, t["muted"]))
+        y += 30
+    out.append(text(CAPS, "  ·  ".join(tags).upper(), 12, x, h - 94, t["faint"], 1.2))
     out.append(f'<line x1="{x}" y1="{h - 72}" x2="{w - x}" y2="{h - 72}" stroke="{t["rule"]}"/>')
-    out.append(text(MED, link, 23, x, h - 36, t["accent"]))
+    out.append(text(MED, link, 19, x, h - 36, t["accent"]))
     out.append("</g></svg>")
     return "".join(out)
 
@@ -223,7 +224,7 @@ def card_stack(t):
     for k, (name, items) in enumerate(rows):
         y = 124 + k * 46
         out.append(label(name, 76, y, t["muted"], 12))
-        out.append(text(REG, items, 21, 330, y + 1, t["text"]))
+        out.append(text(REG, items, 18, 330, y + 1, t["text"]))
         if k < len(rows) - 1:
             out.append(f'<line x1="76" y1="{y + 19}" x2="{w - 76}" y2="{y + 19}" stroke="{t["rule"]}"/>')
     out.append("</g></svg>")
