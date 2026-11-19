@@ -1,21 +1,59 @@
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg"><img alt="Yumeng Ye, AI engineer in Paris. LLMs, agents, retrieval, evaluation and fine-tuning." src="assets/banner-light.svg" width="100%"></picture>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/ribbon-dark.svg">
+    <img src="assets/ribbon-light.svg" alt="" width="100%">
+  </picture>
+</p>
+
+<h1 align="center">Yumeng Ye</h1>
+
+<p align="center"><b>AI engineer in Paris</b><br>
+LLMs, agents, retrieval, evaluation and fine-tuning.</p>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/yumeng-ye-5bb6a1246/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/linkedin-dark.svg"><img alt="LinkedIn" src="assets/linkedin-light.svg" height="40"></picture></a>
-  &nbsp;
-  <a href="https://huggingface.co/blog/noebrndl/european-vision-language-model-optimization-for-nu"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/huggingface-dark.svg"><img alt="Hugging Face" src="assets/huggingface-light.svg" height="40"></picture></a>
+  <a href="https://www.linkedin.com/in/yumeng-ye-5bb6a1246/"><b>LinkedIn</b></a> ·
+  <a href="https://huggingface.co/blog/noebrndl/european-vision-language-model-optimization-for-nu"><b>Hugging Face</b></a>
 </p>
 
-<br>
+## Open source
 
-<a href="https://github.com/genspark-ai/genoffice/pulls?q=is%3Apr+author%3AMidsummerYU+is%3Amerged"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/open-source-dark.svg"><img alt="Open source: tools I use, and help improve. genspark-ai/genoffice, 15 merged pull requests" src="assets/open-source-light.svg" width="100%"></picture></a>
+Tools I use, and help improve.
 
+- **[genspark-ai/genoffice](https://github.com/genspark-ai/genoffice)** · AI office suite · Excel engine on WebAssembly, PowerPoint, PDF · [15 merged PRs](https://github.com/genspark-ai/genoffice/pulls?q=is%3Apr+author%3AMidsummerYU+is%3Amerged)
 
-<br>
+## Research & projects
 
-<p>
-  <a href="https://huggingface.co/blog/noebrndl/european-vision-language-model-optimization-for-nu"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/research-dark.svg"><img alt="Research: vision-language model for nuclear regulation, published on Hugging Face" src="assets/research-light.svg" width="49%"></picture></a>
-  <a href="https://github.com/MidsummerYU/Polimi_Signal_Processing_HUAWAI_Competition"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/competition-dark.svg"><img alt="Huawei Signal Processing Competition, Politecnico di Milano" src="assets/competition-light.svg" width="49%"></picture></a>
-</p>
+<table>
+<tr>
+<td width="50%" valign="top">
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/stack-dark.svg"><img alt="Stack: Python, TypeScript, SQL, Pydantic AI, LangGraph, MCP, RAG, PyTorch, Transformers, FastAPI, PostgreSQL, React, Docker, Kubernetes, GCP, AWS, Azure" src="assets/stack-light.svg" width="100%"></picture>
+**Vision-language model for nuclear regulation**<br>
+<sub>Research · published on Hugging Face</sub>
+
+Fine-tuned a small vision-language model to find the right page in regulatory documents read as images. First author.
+
+[Article](https://huggingface.co/blog/noebrndl/european-vision-language-model-optimization-for-nu) · [Model](https://huggingface.co/racineai/Flantier-Nuclear-Reglementation-1) · [Dataset](https://huggingface.co/datasets/racineai/VDR_Nuclear)
+
+</td>
+<td width="50%" valign="top">
+
+**Huawei Signal Processing Competition**<br>
+<sub>Competition · Politecnico di Milano × Huawei, 2024</sub>
+
+Denoising real audio recordings corrupted by different kinds of noise, with adaptive filtering and spectral analysis.
+
+[Repository](https://github.com/MidsummerYU/Polimi_Signal_Processing_HUAWAI_Competition)
+
+</td>
+</tr>
+</table>
+
+## Stack
+
+| | |
+|---|---|
+| **Languages** | Python · TypeScript · SQL |
+| **AI & agents** | Pydantic AI · LangGraph · MCP · RAG · LLM evaluation · Claude Code |
+| **Machine learning** | PyTorch · Transformers · LoRA · SFT · DPO · vision-language models |
+| **Backend & web** | FastAPI · PostgreSQL · Redis · React · Next.js · Playwright |
+| **Cloud & infra** | Docker · Kubernetes · GCP · AWS · Azure |
