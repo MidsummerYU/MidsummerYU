@@ -1,10 +1,9 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
+  <img alt="Yumeng Ye, AI engineer in Paris. LLMs, agents, retrieval, evaluation and fine-tuning." src="assets/banner-light.svg" width="100%">
+</picture>
+
 <div align="center">
-
-# Yumeng Ye
-
-**AI engineer in Paris**
-
-LLMs, agents, retrieval, evaluation and fine-tuning.
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/yumeng-ye-5bb6a1246/)
 [![Hugging Face](https://img.shields.io/badge/Hugging_Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/blog/noebrndl/european-vision-language-model-optimization-for-nu)
@@ -24,7 +23,29 @@ An open-source AI office suite: Word, Excel, PowerPoint and PDF editors with a b
 - **PowerPoint**: charts carry their workbook so *Edit Data* works ([#2090](https://github.com/genspark-ai/genoffice/pull/2090)), real 3D models in slides ([#2091](https://github.com/genspark-ai/genoffice/pull/2091)), slide shows narrated slide by slide ([#2056](https://github.com/genspark-ai/genoffice/pull/2056))
 - **PDF and Sheets**: undo and redo of page edits, password unlocking, Flash Fill, formulas that survive a sort, exports that wait for results
 
-[All my merged PRs →](https://github.com/genspark-ai/genoffice/pulls?q=is%3Apr+author%3AMidsummerYU+is%3Amerged)
+<details>
+<summary><b>All 15 merged pull requests</b></summary>
+<br>
+
+- [#2630](https://github.com/genspark-ai/genoffice/pull/2630) fix(sheets): Flash Fill reads every column of the list, not the six nearest
+- [#2526](https://github.com/genspark-ai/genoffice/pull/2526) fix(pdf): Undo and Redo of Replace pages, Page size, Crop and Insert PDF
+- [#2525](https://github.com/genspark-ai/genoffice/pull/2525) fix(pdf): try the owner password first, so a one-password protection unlocks as the owner
+- [#2524](https://github.com/genspark-ai/genoffice/pull/2524) fix(sheets): a sort right after opening shifts its formulas
+- [#2501](https://github.com/genspark-ai/genoffice/pull/2501) fix(pdf): keep lines a wrap cannot explain out of one text block
+- [#2500](https://github.com/genspark-ai/genoffice/pull/2500) fix(sheets): CSV export, PDF export and Print wait for the formula results
+- [#2499](https://github.com/genspark-ai/genoffice/pull/2499) fix(docs): insert the gallery page number as a PAGE field
+- [#2103](https://github.com/genspark-ai/genoffice/pull/2103) fix(pptx-engine): a reparsed slide keeps its unsaved edits marked
+- [#2102](https://github.com/genspark-ai/genoffice/pull/2102) fix(pptx-engine): restore what #2090 added and #2091's merge dropped
+- [#2091](https://github.com/genspark-ai/genoffice/pull/2091) feat(slides): real 3D models — stored as PowerPoint stores them, turned in the editor
+- [#2090](https://github.com/genspark-ai/genoffice/pull/2090) feat(pptx-engine): a chart carries its workbook, so PowerPoint's Edit Data works
+- [#2056](https://github.com/genspark-ai/genoffice/pull/2056) feat(slides): Slide Show > Record narrates the show, slide by slide
+- [#1997](https://github.com/genspark-ai/genoffice/pull/1997) fix(sheets): load the cell-font aliases a workbook uses, not all at startup
+- [#1990](https://github.com/genspark-ai/genoffice/pull/1990) fix(xlsx-engine): open and save workbooks on WASI, where canonicalize is unsupported
+- [#1979](https://github.com/genspark-ai/genoffice/pull/1979) feat(xlsx-engine): run without threads, so the engine builds for WebAssembly
+
+[See them on GitHub →](https://github.com/genspark-ai/genoffice/pulls?q=is%3Apr+author%3AMidsummerYU+is%3Amerged)
+
+</details>
 
 ---
 
