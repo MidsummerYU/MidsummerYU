@@ -167,29 +167,24 @@ def banner(t):
     return "".join(out)
 
 
-def footer_link(s, x, y, t):
-    return text(MED, s, 18, x, y, t["accent"])
+CONTRIBUTIONS = [
+    ("genspark-ai/genoffice", "AI office suite · Excel engine on WebAssembly, PowerPoint, PDF", "15 merged"),
+]
 
 
 def card_open_source(t):
-    w, h = 1200, 330
+    w, h = 1200, 164 + 54 * len(CONTRIBUTIONS)
     out = frame(w, h, t)
     out.append(fade(0.1, 1.0, 6))
-    out.append(text(MED, "15", 150, 70, 196, t["accent"]))
-    out.append(label("merged pull requests", 76, 238, t["muted"], 13))
-    out.append(f'<line x1="330" y1="56" x2="330" y2="274" stroke="{t["rule"]}"/>')
-    x = 384
-    out.append(label("Open source", x, 74, t["accent"]))
-    out.append(text(MED, "genspark-ai/genoffice", 40, x, 120, t["text"]))
-    out.append(text(ITAL, "An open-source AI office suite, 12k+ stars on GitHub", 21, x, 152, t["muted"]))
-    items = ["Brought the Excel engine to WebAssembly so it runs in the browser",
-             "PowerPoint charts that keep their data, 3D models, narrated slide shows",
-             "PDF and spreadsheet fixes, from undo and redo to formulas that survive a sort"]
-    for k, it in enumerate(items):
-        y = 198 + k * 32
-        out.append(f'<circle cx="{x + 3}" cy="{y - 6}" r="2.4" fill="{t["accent"]}"/>')
-        out.append(text(REG, it, 20, x + 20, y, t["text"]))
-    out.append(footer_link("View the pull requests  →", x, 296, t))
+    out.append(label("Open source", 76, 70, t["accent"]))
+    out.append(text(ITAL, "Tools I use, and help improve", 22, 76, 104, t["muted"]))
+    for k, (repo, what, count) in enumerate(CONTRIBUTIONS):
+        y = 158 + k * 54
+        out.append(f'<line x1="76" y1="{y - 34}" x2="{w - 76}" y2="{y - 34}" stroke="{t["rule"]}"/>')
+        out.append(text(MED, repo, 25, 76, y, t["text"]))
+        out.append(text(REG, what, 20, 420, y, t["muted"]))
+        cw = CAPS.width(count.upper(), 13, CAPS_TRACK)
+        out.append(label(count, w - 76 - cw, y - 2, t["accent"]))
     out.append("</g></svg>")
     return "".join(out)
 
