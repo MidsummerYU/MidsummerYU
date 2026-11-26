@@ -169,7 +169,7 @@ def banner(t):
 
 
 CONTRIBUTIONS = [
-    ("genspark-ai/genoffice", "AI office suite · Excel engine on WebAssembly, PowerPoint, PDF", "15 merged"),
+    ("genspark-ai/genoffice", "AI office suite · Excel engine on WebAssembly, PowerPoint, PDF", "Contributor"),
 ]
 
 

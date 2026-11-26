@@ -8,7 +8,7 @@
 
 <br>
 
-<a href="https://github.com/genspark-ai/genoffice/pulls?q=is%3Apr+author%3AMidsummerYU+is%3Amerged"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/open-source-dark.svg"><img alt="Open source: tools I use, and help improve. genspark-ai/genoffice, 15 merged pull requests" src="assets/open-source-light.svg" width="100%"></picture></a>
+<a href="https://github.com/genspark-ai/genoffice/pulls?q=is%3Apr+author%3AMidsummerYU+is%3Amerged"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/open-source-dark.svg"><img alt="Open source: tools I use, and help improve. Contributor to genspark-ai/genoffice" src="assets/open-source-light.svg" width="100%"></picture></a>
 
 
 <br>
